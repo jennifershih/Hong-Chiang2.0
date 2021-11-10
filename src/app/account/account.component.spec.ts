@@ -1,5 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
+import { IgxGridModule, IgxActionStripModule, IgxButtonModule, IgxToggleModule, IgxIconModule, IgxDialogModule, IgxSelectModule, IgxInputGroupModule, IgxDateTimeEditorModule, IgxCardModule } from 'igniteui-angular';
 import { AccountComponent } from './account.component';
 
 describe('AccountComponent', () => {
@@ -8,7 +11,8 @@ describe('AccountComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AccountComponent ]
+      declarations: [ AccountComponent ],
+      imports: [ NoopAnimationsModule, FormsModule, IgxGridModule, IgxActionStripModule, IgxButtonModule, IgxToggleModule, IgxIconModule, IgxDialogModule, IgxSelectModule, IgxInputGroupModule, IgxDateTimeEditorModule, IgxCardModule ]
     })
     .compileComponents();
   });
