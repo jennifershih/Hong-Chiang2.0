@@ -14,12 +14,11 @@ export const routes: Routes = [
   { path: 'store', component: StoreComponent, data: { text: 'store' } },
   { path: 'account', component: AccountComponent, data: { text: 'account' } },
   { path: 'log', component: LogComponent, data: { text: 'log' } },
-  { path: '**', component: PageNotFoundComponent } // must always be last
+  { path: '**', component: PageNotFoundComponent }, // must always be last
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes), ErrorRoutingModule],
-  exports: [RouterModule, ErrorRoutingModule]
+  exports: [RouterModule, ErrorRoutingModule],
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}

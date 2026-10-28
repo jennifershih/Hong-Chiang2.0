@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: 'app-log',
   templateUrl: './log.component.html',
-  styleUrls: ['./log.component.scss']
+  changeDetection: ChangeDetectionStrategy.Eager,
+  styleUrls: ['./log.component.scss'],
 })
-export class LogComponent {
-}
+export class LogComponent {}

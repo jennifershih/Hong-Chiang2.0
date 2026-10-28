@@ -1,20 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  inject,
+} from '@angular/core';
 import { DataSource1StoreService } from '../services/data-source1-store.service';
 
 @Component({
+  standalone: false,
   selector: 'app-store',
   templateUrl: './store.component.html',
-  styleUrls: ['./store.component.scss']
+  changeDetection: ChangeDetectionStrategy.Eager,
+  styleUrls: ['./store.component.scss'],
 })
 export class StoreComponent implements OnInit {
-  public dataSource1StoreTable1: any = null;
+  private dataSource1StoreService = inject(DataSource1StoreService);
 
-  constructor(
-    private dataSource1StoreService: DataSource1StoreService,
-  ) {}
+  public dataSource1StoreTable1: any = null;
 
   ngOnInit() {
     // depending on implementation, data subscriptions might need to be unsubbed later
-    this.dataSource1StoreService.getData('Table 1').subscribe(data => this.dataSource1StoreTable1 = data);
+    this.dataSource1StoreService
+      .getData('Table 1')
+      .subscribe((data) => (this.dataSource1StoreTable1 = data));
   }
 }
